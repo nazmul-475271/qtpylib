@@ -60,7 +60,10 @@ setup(
 
     include_package_data=True,
     package_data={
-        'static': ['qtpylib/_webapp/*'],
-        'db': ['qtpylib/schema.sql*']
+        # ✅ CORRECTED: Use package name + list of patterns
+        'qtpylib': [
+            '_webapp/*',
+            'schema.sql*'
+        ]
     },
 )
